@@ -1,0 +1,35 @@
+{% extends "usuarios/index.html" %}
+
+{% block icons %}<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>{% endblock %}
+{% block title %}Login{% endblock %}
+
+
+{% block login %}
+    <div class="container">
+       <form action="" method="get">
+        {% csrf_token %}
+        <h1>Acesse sua Conta</h1>
+        <div class="input-box">
+            <input type="text" name="email" placeholder="Email" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" name="senha" placeholder="Senha" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="remember">
+            <label><input type="checkbox"/>Lembrar meu acesso</label>
+            <p><a href="#">Esqueci minha senha</a></p>
+        </div>
+        <button class="btn">Login</button>
+        <div class="create">
+            <p>Não possui uma Conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+        </div>
+
+       </form>
+    </div>
+
+    
+
+{% endblock %}
